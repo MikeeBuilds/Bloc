@@ -16,7 +16,7 @@ export default function Home() {
         height={1080}
       />
       <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-4 py-16">
-        <div className="max-w-3xl mx-auto pb-24">
+        <div className="max-w-3xl mx-auto pb-">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
             Beautiful UI components built with Tailwind CSS and Next.js
           </h1>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="relative z-10 p-64 text-center text-gray-400">
+      <footer className="relative z-10 p-4 text-center text-gray-400">
         <p>A project by the team behind UI Components</p>
       </footer>
     </div>

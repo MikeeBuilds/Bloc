@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import FlickeringGrid from "@/components/ui/flickering-grid";
+import { LampDemo } from "@/components/ui/lamp"; // Import the LampDemo component
 
 export default function Home() {
   return (
@@ -16,6 +17,9 @@ export default function Home() {
         height={1080}
       />
       <div className="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-4 py-16">
+        {/* Add the LampDemo component here */}
+        <LampDemo />
+        
         <div className="max-w-3xl mx-auto pb-24">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
             Beautiful UI components built with Tailwind CSS and Next.js
