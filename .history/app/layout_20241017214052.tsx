@@ -29,7 +29,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen bg-background text-foreground">
-            <header className="p-4 flex justify-between items-center">
+            <div className="p-4 flex justify-between items-center">
               <Link href="/" className="text-2xl font-bold">UI Components</Link>
               <div className="flex items-center space-x-4">
                 <ModeToggle />

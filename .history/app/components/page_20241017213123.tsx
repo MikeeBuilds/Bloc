@@ -7,23 +7,36 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import ComponentsLayout from './layout';
 
-const Inputs = dynamic(() => import('./inputs'), { suspense: true });
-const Selects = dynamic(() => import('./selects'), { suspense: true });
-const Toggles = dynamic(() => import('./toggles'), { suspense: true });
-const Sliders = dynamic(() => import('./sliders'), { suspense: true });
+const Inputs = dynamic(() => import('./inputs'), { 
+  loading: () => <div>Loading Inputs...</div>,
+  ssr: false 
+});
+const Selects = dynamic(() => import('./selects'), { 
+  loading: () => <div>Loading Selects...</div>,
+  ssr: false 
+});
+const Toggles = dynamic(() => import('./toggles'), { 
+  loading: () => <div>Loading Toggles...</div>,
+  ssr: false 
+});
+const Sliders = dynamic(() => import('./sliders'), { 
+  loading: () => <div>Loading Sliders...</div>,
+  ssr: false 
+});
+
+const tabs = [
+  { value: 'inputs', label: 'Inputs', component: Inputs },
+  { value: 'selects', label: 'Selects', component: Selects },
+  { value: 'toggles', label: 'Toggles', component: Toggles },
+  { value: 'sliders', label: 'Sliders', component: Sliders },
+];
 
 export default function ComponentsPage() {
   const [selectedTab, setSelectedTab] = useState('inputs');
 
   const renderContent = () => {
-    return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <TabsContent value="inputs"><Inputs /></TabsContent>
-        <TabsContent value="selects"><Selects /></TabsContent>
-        <TabsContent value="toggles"><Toggles /></TabsContent>
-        <TabsContent value="sliders"><Sliders /></TabsContent>
-      </Suspense>
-    );
+    const TabComponent = tabs.find(tab => tab.value === selectedTab)?.component;
+    return TabComponent ? <TabComponent /> : null;
   };
 
   return (
@@ -31,10 +44,11 @@ export default function ComponentsPage() {
       <h1 className="text-3xl font-bold mb-8">Component Showcase</h1>
       <Tabs value={selectedTab} onValueChange={setSelectedTab}>
         <TabsList className="mb-8">
-          <TabsTrigger value="inputs">Inputs</TabsTrigger>
-          <TabsTrigger value="selects">Selects</TabsTrigger>
-          <TabsTrigger value="toggles">Toggles</TabsTrigger>
-          <TabsTrigger value="sliders">Sliders</TabsTrigger>
+          {tabs.map(tab => (
+            <TabsTrigger key={tab.value} value={tab.value}>
+              {tab.label}
+            </TabsTrigger>
+          ))}
         </TabsList>
         <Card>
           <CardHeader>
@@ -42,7 +56,9 @@ export default function ComponentsPage() {
             <CardDescription>Explore our collection of {selectedTab} components.</CardDescription>
           </CardHeader>
           <CardContent>
-            {renderContent()}
+            <Suspense fallback={<div>Loading...</div>}>
+              {renderContent()}
+            </Suspense>
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>

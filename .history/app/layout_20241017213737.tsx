@@ -33,7 +33,7 @@ export default function RootLayout({
               <Link href="/" className="text-2xl font-bold">UI Components</Link>
               <div className="flex items-center space-x-4">
                 <ModeToggle />
-                <a href="https://github.com/MikeeBuilds/Bloc" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" size="icon">
                     <Github className="h-[1.2rem] w-[1.2rem]" />
                     <span className="sr-only">GitHub</span>
