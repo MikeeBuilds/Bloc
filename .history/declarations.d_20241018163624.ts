@@ -1,0 +1,1 @@
+Module '"react-syntax-highlighter"' declares 'SyntaxHighlighterProps' locally, but it is not exported.
