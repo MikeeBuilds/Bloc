@@ -4,7 +4,7 @@ import FlickeringGrid from "@/components/ui/flickering-grid";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen text-black dark:text-white flex flex-col">
+    <div className="px-auto relative min-h-screen text-black dark:text-white flex flex-col">
       <FlickeringGrid
         className="absolute inset-0 z-0"
         squareSize={6}

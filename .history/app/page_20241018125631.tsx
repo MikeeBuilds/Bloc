@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="relative z-10 p-64 text-center text-gray-600 dark:text-gray-400">
+      <footer className="relative z-10 p-64 text-center text-gray-600">
         <p>A project by the team behind UI Components</p>
       </footer>
     </div>

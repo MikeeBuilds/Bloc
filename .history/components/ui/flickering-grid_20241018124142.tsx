@@ -26,6 +26,7 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   color = "rgb(0, 0, 0)",
   width,
   height,
+  className,
   maxOpacity = 0.3,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -168,15 +169,15 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
   return (
     <canvas
-    ref={canvasRef}
-    className="fixed inset-0 w-full h-full pointer-events-none"
-    style={{
-      width: "100vw",
-      height: "100vh",
-    }}
-    width={width}
-    height={height}
-  />
+      ref={canvasRef}
+      className={`size-full pointer-events-none ${className}`}
+      style={{
+        width: width || "100%",
+        height: height || "100%",
+      }}
+      width={width}
+      height={height}
+    />
   );
 };
 

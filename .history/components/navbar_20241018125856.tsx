@@ -23,15 +23,15 @@ export function Navbar() {
             <Link href="/docs" className="text-sm font-medium transition-colors hover:text-primary">
               Documentation
             </Link>
+            <Link href="/components" className="text-sm font-medium transition-colors hover:text-primary">
+              Components
+            </Link>
           </nav>
           <div className="flex items-center space-x-2">
-            <ModeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="hover:bg-transparent"
-              asChild
-            >
+            <Button variant="ghost" size="icon" className="text-[#00FFFF] hover:text-[#40E0D0] hover:bg-transparent">
+              <ModeToggle />
+            </Button>
+            <Button variant="ghost" size="icon" className="text-[#00FFFF] hover:text-[#40E0D0] hover:bg-transparent">
               <a href="https://github.com/MikeeBuilds/Bloc" target="_blank" rel="noopener noreferrer">
                 <Github className="h-[1.2rem] w-[1.2rem]" />
                 <span className="sr-only">GitHub</span>

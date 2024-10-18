@@ -23,13 +23,16 @@ export function Navbar() {
             <Link href="/docs" className="text-sm font-medium transition-colors hover:text-primary">
               Documentation
             </Link>
+            <Link href="/components" className="text-sm font-medium transition-colors hover:text-primary">
+              Components
+            </Link>
           </nav>
           <div className="flex items-center space-x-2">
             <ModeToggle />
             <Button
               variant="ghost"
               size="icon"
-              className="hover:bg-transparent"
+              className="text-[#00FFFF] hover:text-[#40E0D0]hover:bg-transparent"
               asChild
             >
               <a href="https://github.com/MikeeBuilds/Bloc" target="_blank" rel="noopener noreferrer">

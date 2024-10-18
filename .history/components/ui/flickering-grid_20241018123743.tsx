@@ -1,18 +1,14 @@
 "use client";
 
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 interface FlickeringGridProps {
   squareSize?: number;
   gridGap?: number;
   flickerChance?: number;
-  color?: string;
+  lightColor?: string;
+  darkColor?: string;
   width?: number;
   height?: number;
   className?: string;
@@ -23,13 +19,16 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   squareSize = 4,
   gridGap = 6,
   flickerChance = 0.3,
-  color = "rgb(0, 0, 0)",
+  lightColor = "rgb(0, 0, 0)",
+  darkColor = "rgb(255, 255, 255)",
   width,
   height,
+  className,
   maxOpacity = 0.3,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const { theme } = useTheme();
 
   const memoizedColor = useMemo(() => {
     const toRGBA = (color: string) => {
@@ -45,8 +44,8 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
       const [r, g, b] = Array.from(ctx.getImageData(0, 0, 1, 1).data);
       return `rgba(${r}, ${g}, ${b},`;
     };
-    return toRGBA(color);
-  }, [color]);
+    return toRGBA(theme === "dark" ? darkColor : lightColor);
+  }, [theme, lightColor, darkColor]);
 
   const setupCanvas = useCallback(
     (canvas: HTMLCanvasElement) => {
@@ -168,15 +167,15 @@ const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
   return (
     <canvas
-    ref={canvasRef}
-    className="fixed inset-0 w-full h-full pointer-events-none"
-    style={{
-      width: "100vw",
-      height: "100vh",
-    }}
-    width={width}
-    height={height}
-  />
+      ref={canvasRef}
+      className={`size-full pointer-events-none ${className}`}
+      style={{
+        width: width || "100%",
+        height: height || "100%",
+      }}
+      width={width}
+      height={height}
+    />
   );
 };
 

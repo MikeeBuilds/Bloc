@@ -29,7 +29,7 @@ export default function Home() {
                 Check out 50+ input components
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-black text-black hover:bg-white hover:text-black dark:border-white dark:text-white dark:hover:bg-black dark:hover:text-white">
+            <Button variant="outline" size="lg" className="border-black text-black hover:bg-white hover:text-black ">
               <Link href="/docs">
                 Read the docs
               </Link>
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="relative z-10 p-64 text-center text-gray-600 dark:text-gray-400">
+      <footer className="relative z-10 p-64 text-center text-gray-400">
         <p>A project by the team behind UI Components</p>
       </footer>
     </div>

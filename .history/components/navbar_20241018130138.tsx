@@ -23,6 +23,9 @@ export function Navbar() {
             <Link href="/docs" className="text-sm font-medium transition-colors hover:text-primary">
               Documentation
             </Link>
+            <Link href="/components" className="text-sm font-medium transition-colors hover:text-primary">
+              Components
+            </Link>
           </nav>
           <div className="flex items-center space-x-2">
             <ModeToggle />
