@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from "@/components/theme-provider"
-import { Navbar } from './components/navbar';
+import { Navbar } from '@/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
         >
           <div className="min-h-screen bg-background text-foreground">
             <Navbar />
-            <main className="container mx-auto py-4">
+            <main className="container mx-auto py-8">
               {children}
             </main>
           </div>

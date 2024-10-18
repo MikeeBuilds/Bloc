@@ -7,11 +7,11 @@ export default function Home() {
     <div className="relative min-h-screen bg-black text-white flex flex-col">
       <FlickeringGrid
         className="absolute inset-0 z-0"
-        squareSize={6}
-        gridGap={4}
+        squareSize={4}
+        gridGap={6}
         color="#6B7280"
-        maxOpacity={0.3}
-        flickerChance={0.05}
+        maxOpacity={0.15}
+        flickerChance={0.02}
         width={1920}
         height={1080}
       />
@@ -21,7 +21,7 @@ export default function Home() {
             Beautiful UI components built with Tailwind CSS and Next.js
           </h1>
           <p className="text-xl mb-8 text-gray-300">
-            An extensive collection of copy-and-paste components for quickly building app UIs. It&#39;s free, open-source, and ready to drop into your projects.
+            An extensive collection of copy-and-paste components for quickly building app UIs. It's free, open-source, and ready to drop into your projects.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild size="lg" className="bg-white text-black hover:bg-gray-200">

@@ -1,0 +1,36 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+
+export default function Home() {
+  return (
+    <div className="relative min-h-screen bg-gray-900 text-foreground flex flex-col">
+      <div className="spotlight-wrapper">
+        <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-16 pb-8">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
+              Beautiful UI components built with Tailwind CSS and Next.js
+            </h1>
+            <p className="text-xl mb-8">
+              An extensive collection of copy-and-paste components for quickly building app UIs. It&apos;s free, open-source, and ready to drop into your projects.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button asChild size="lg">
+                <Link href="/components">
+                  Check out 50+ input components
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg">
+                <Link href="/docs">
+                  Read the docs
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer className="p-4 text-center">
+        <p>A project by the team behind UI Components</p>
+      </footer>
+    </div>
+  );
+}

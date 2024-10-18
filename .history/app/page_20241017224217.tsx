@@ -7,11 +7,11 @@ export default function Home() {
     <div className="relative min-h-screen bg-black text-white flex flex-col">
       <FlickeringGrid
         className="absolute inset-0 z-0"
-        squareSize={6}
-        gridGap={4}
+        squareSize={4}
+        gridGap={6}
         color="#6B7280"
-        maxOpacity={0.3}
-        flickerChance={0.05}
+        maxOpacity={0.15}
+        flickerChance={0.02}
         width={1920}
         height={1080}
       />
